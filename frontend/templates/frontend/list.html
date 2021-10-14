@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}" />
+    <style>body {background-image: url("{% static 'frontend/img/background.png' %}")}</style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="task-container">
+        <div id="form-wrapper">
+          <form id="form">
+            <div class="flex-wrapper">
+              <div style="flex: 6">
+                <input
+                  id="title"
+                  class="form-control"
+                  type="text"
+                  name="title"
+                  placeholder="Add task"
+                />
+              </div>
+              <div style="flex: 1">
+                <input id="submit" class="btn" type="submit" value="Database" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="list-wrapper"></div>
+      </div>
+    </div>
+
+    <script>console.log("{{ SITE_URL }}")</script>
+    <input id="site-url" value="{{ SITE_URL }}" type="hidden" />
+    <script src="{% static 'frontend/js/script.js' %}"></script>
+  </body>
+</html>
